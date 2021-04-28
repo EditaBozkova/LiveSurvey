@@ -2,14 +2,14 @@ import React from 'react';
 import NavBa from './NavBar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Jumbotron, Card, CardGroup, Button } from 'react-bootstrap';
+import { Container, Jumbotron, Card, CardGroup, Button, Badge } from 'react-bootstrap';
 
 const Podmenu = () => {
   return (
     <CardGroup>
   <Card>
     <Card.Body>
-      <Card.Title><b>Základní informace</b></Card.Title>
+      <Card.Title><b>Základní info</b></Card.Title>
       <Card.Text>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla non arcu lacinia neque faucibus fringilla. Etiam bibendum elit eget erat.
       </Card.Text>
@@ -36,7 +36,8 @@ const Podmenu = () => {
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla non arcu to show that equal height action.
       </Card.Text>
     </Card.Body>
-    <Button href='/album' variant="secondary">Prohlédnout</Button>{' '}
+    <Button href='/album' variant="secondary">Prohlédnout <Badge variant="light">4</Badge>
+    </Button>{' '}
   </Card>
 </CardGroup>
   );
@@ -49,7 +50,7 @@ const Home = () => (
       <Container>
         <h1>Živé ankety</h1>
         <p>
-        Vítejte na <i>jedinečné</i> webové aplikaci, která Vám pomůže vytvořit a následně sdílet živé ankety.
+        Vítejte na <i>jedinečné</i> webové aplikaci, která Vám pomůže vytvořit a následně sdílet živé ankety!
         </p>
         <ul>
           <li>Výběr jedné z možnosti</li>

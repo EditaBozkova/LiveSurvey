@@ -19,10 +19,17 @@ export default function App() {
           <Route path="/album">
             <Album />
           </Route>
+          <Route path="/InProgress">
+            <InProg />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
     </Router>
   );
+}
+
+function InProg() {
+  return <h2>Under construction...</h2>;
 }
