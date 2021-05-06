@@ -24,7 +24,7 @@ export default function App() {
             <InProg />
           </Route>
           <Route path="/">
-            <Home SurSum="2"/>
+            <Home SurSum={JSONdata.length}/>
           </Route>
         </Switch>
     </Router>

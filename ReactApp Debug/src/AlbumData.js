@@ -78,7 +78,7 @@ const JSONdata = [
         "info": {
                 "SName": "Sexuální obtěžování ", 
                 "SAuthor": "des. Edita Božková", 
-                "SAbout": "Anonymní dotazník, který má za úkol zjistit míru obětí sexuálního obtěžování", 
+                "SAbout": "Anonymní dotazník, který má za úkol zjistit míru sexuálního obtěžování u obětí", 
                 "QuestSum": "16", 
                 "STime": "10 minut"
             },
@@ -170,6 +170,35 @@ const JSONdata = [
                 "CorrectAnsw": "false",
                 "QTitle": "Pokud jste se stal/a obětí sexuálního obtěžování, zanechalo to na Vás nějaké následky?",
                 "Choices": ["Nejsem oběť sexuálního násilí", "Nezanechalo to na mně žádné následky", "Ano, zanechalo to na mě trvalé následky"]
+            }
+        ]
+    }, 
+    
+    {
+        "info": {
+                "SName": "test", 
+                "SAuthor": "plk. test", 
+                "SAbout": "Kratky dotaznik pro debugging", 
+                "QuestSum": "?", 
+                "STime": "?"
+            },
+        "questions": [
+            {
+                "Type": "radiogroup",
+                "CorrectAnsw": "false",
+                "QTitle": "Jaké je Vaše pohlaví",
+                "Choices": ["Žena", "Muž"]
+            }, {
+                "Type": "text",
+                "QTitle": "Kolik je Vám let?"
+            }, {
+                "Type": "checkbox",
+                "CorrectAnsw": "false",
+                "QTitle": "Oblibene dny",
+                "Choices": ["Žádné", "Po", "Ut", "Str"]
+            }, {
+                "Type": "text",
+                "QTitle": "Jaky je den?"
             }
         ]
     }

@@ -3,6 +3,8 @@ import NavBa from './NavBar';
 import { Card, CardColumns, Container, Jumbotron, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const Survey = (props) => {
+    let url="/album-"+props.index;
+
     return (
         <Card>
             <Card.Body>
@@ -17,7 +19,7 @@ const Survey = (props) => {
                 <ListGroupItem><b>Doba:</b> {props.data.info.STime ? props.data.info.STime : "0 minut"}</ListGroupItem>
             </ListGroup>
             <Card.Body>
-                <Card.Link href=""><b>Spustit</b></Card.Link>
+                <Card.Link href={url}><b>Spustit</b></Card.Link>
                 <Card.Link href="">Smazat</Card.Link>
             </Card.Body>
         </Card>
@@ -29,7 +31,9 @@ const Podmenu = (props) => {
     //console.log(JSON.stringify(props.JSONdata));
 
     for(const item of props.JSONdata) {
-        Result.push(<Survey data={item}></Survey>);
+        const index=props.JSONdata.indexOf(item);
+
+        Result.push(<Survey data={item} index={index}></Survey>);
     }
     return (
         <CardColumns>{Result}</CardColumns>
@@ -45,6 +49,6 @@ const Album = (props) => (
         </Jumbotron>
         <Podmenu JSONdata={props.JSONdata}/>
     </Container>
-);
+)
 
 export default Album;
