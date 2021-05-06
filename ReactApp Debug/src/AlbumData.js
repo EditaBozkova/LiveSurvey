@@ -78,7 +78,7 @@ const JSONdata = [
         "info": {
                 "SName": "Sexuální obtěžování ", 
                 "SAuthor": "des. Edita Božková", 
-                "SAbout": "Anonymní dotazník, který má za účelem zjistit míru obětí sexuálního obtěžování", 
+                "SAbout": "Anonymní dotazník, který má za úkol zjistit míru obětí sexuálního obtěžování", 
                 "QuestSum": "16", 
                 "STime": "10 minut"
             },
