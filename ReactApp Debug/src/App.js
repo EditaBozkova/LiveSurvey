@@ -24,7 +24,7 @@ export default function App() {
             <InProg />
           </Route>
           <Route path="/">
-            <Home SurSum="3"/>
+            <Home SurSum="2"/>
           </Route>
         </Switch>
     </Router>

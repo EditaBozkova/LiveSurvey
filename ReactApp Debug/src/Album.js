@@ -13,7 +13,7 @@ const Survey = (props) => {
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroupItem>Počet otázek: {props.data.pages.lenght ? props.data.pages.lenght : "0"}</ListGroupItem>
+                <ListGroupItem>Počet otázek: {props.data.questions.lenght ? props.data.questions.lenght : "0"}</ListGroupItem>
                 <ListGroupItem><b>Doba:</b> {props.data.info.STime ? props.data.info.STime : "0 minut"}</ListGroupItem>
             </ListGroup>
             <Card.Body>
