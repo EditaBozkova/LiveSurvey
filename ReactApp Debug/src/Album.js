@@ -4,19 +4,20 @@ import { Card, CardColumns, Container, Jumbotron, ListGroup, ListGroupItem } fro
 
 const Survey = (props) => {
     let url="/album-"+props.index;
-
+    const data = props.data;
+    const {info,questions}=data;
     return (
         <Card>
             <Card.Body>
-                <Card.Title><h3>{props.data.info.SName ? props.data.info.SName : "defName"}</h3></Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Autor: {props.data.info.SAuthor ? props.data.info.SAuthor : "defAuth"}</Card.Subtitle>
+                <Card.Title><h3>{info.SName ? info.SName : "defName"}</h3></Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">Autor: {info.SAuthor ? info.SAuthor : "defAuth"}</Card.Subtitle>
                 <Card.Text>
-                    {props.data.info.SAbout ? props.data.info.SAbout : "defAbout"}
+                    {info.SAbout ? info.SAbout : "defAbout"}
                 </Card.Text>
-            </Card.Body>
+            </Card.Body> 
             <ListGroup className="list-group-flush">
-                <ListGroupItem>Počet otázek: {props.data.questions.lenght ? props.data.questions.lenght : "0"}</ListGroupItem>
-                <ListGroupItem><b>Doba:</b> {props.data.info.STime ? props.data.info.STime : "0 minut"}</ListGroupItem>
+                <ListGroupItem>Počet otázek: {questions.length ? questions.length : "0"}</ListGroupItem>
+                <ListGroupItem><b>Doba:</b> {info.STime ? info.STime : "0 minut"}</ListGroupItem>
             </ListGroup>
             <Card.Body>
                 <Card.Link href={url}><b>Spustit</b></Card.Link>
