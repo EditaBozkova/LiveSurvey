@@ -4,7 +4,7 @@ import {NavLink } from 'react-router-dom';
 import { Card, CardColumns, Container, Jumbotron, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const Survey = (props) => {
-    let url="/album-"+props.index;
+    let url="/album/"+props.index;
     const data = props.data;
     const {info,questions}=data;
     return (
