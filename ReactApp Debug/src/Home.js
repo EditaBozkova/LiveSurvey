@@ -1,7 +1,5 @@
 import React from 'react';
 import NavBa from './NavBar';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Jumbotron, Card, CardGroup, Button, Badge } from 'react-bootstrap';
 
 const Podmenu = (props) => {
