@@ -4,11 +4,9 @@ import {NavLink } from 'react-router-dom';
 import { Card, CardColumns, Container, Jumbotron, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const Survey = (props) => {
-    let url="/album/"+props.index;
-
+    let url="/album-"+props.index;
     const data = props.data;
     const {info,questions}=data;
-
     return (
         <Card>
             <Card.Body>
@@ -17,7 +15,7 @@ const Survey = (props) => {
                 <Card.Text>
                     {info.SAbout ? info.SAbout : "defAbout"}
                 </Card.Text>
-            </Card.Body>
+            </Card.Body> 
             <ListGroup className="list-group-flush">
                 <ListGroupItem>Počet otázek: {questions.length ? questions.length : "0"}</ListGroupItem>
                 <ListGroupItem><b>Doba:</b> {info.STime ? info.STime : "0 minut"}</ListGroupItem>
