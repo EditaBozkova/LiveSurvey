@@ -1,12 +1,16 @@
+// Import knihoven
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'; 
+
+// Import komponenty App
 import App from './App';
 
-const appRoot = "/ui"
+const root = "/ui"
 
-ReactDOM.render(
+// Renderování komponenty App (obsahuje router přesměrování)
+ReactDOM.render( 
   <React.StrictMode>
-    <App appRoot={appRoot}/>
+    <App appRoot={root}/> 
   </React.StrictMode>,
   document.getElementById('root')
 );

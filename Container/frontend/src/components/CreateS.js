@@ -1,9 +1,13 @@
+// Import používaných knihoven
 import React from 'react';
+
+// Import používaných komponent/funkcí
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Container, Jumbotron } from 'react-bootstrap';
-import NavBa from './NavBar';
+import NavBar from './NavBar';
 
+// Spuštění komponenty pro zobrazení podmenu
 const Podmenu = () => {
     const [nazev, setNazev] = useState("Dotazník pro studenty KB");
     const [autor, setAutor] = useState("Jan Schwarz");
@@ -25,12 +29,12 @@ const Podmenu = () => {
           });
     };
 
-
+    // Návratová hodnota komponenty
     return (
         <div className="create">
             <h2><b>Tvorba dotazníku</b></h2><br />
 
-            <form onSubmit={handleSubmit} action="/ui/">
+            <form onSubmit={handleSubmit} action="/ui/"> {/*Zapouzdření všech inputů do jednoho formuláře (textový input a tlačítko submit)*/}
                 <label>Název dotazníku: </label><br />
                 <input
                  type="text"
@@ -45,20 +49,19 @@ const Podmenu = () => {
                  placeholder={autor}
                  onChange={(props) => setAutor(props.target.value)}
                 /><br /><br />
-                <input 
+                <input // Tlačítko pro odeslání dat
                  type="submit"
                  value="Odeslat"
                  name="submit" />
             </form>
         </div>
-        
-
     )
 }
 
+// Spuštění komponnety pro zorazení stránky
 const CreateS = () => (
     <Container className="p-1">
-        <NavBa></NavBa>
+        <NavBar />
         <Jumbotron>
             <h2>Vytvořit anketu</h2>
             <p>Nástroj pro tvorbu interaktvních anket se sběrem dat</p>

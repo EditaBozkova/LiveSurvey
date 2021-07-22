@@ -5,7 +5,6 @@ const JSONdata = [
                 "ID": "testMix",
                 "SAuthor": "plk. test", 
                 "SAbout": "Kratky dotaznik pro debugging", 
-                "QuestSum": "?", 
                 "STime": "?"
             },
         "questions": [
@@ -45,7 +44,6 @@ const JSONdata = [
                 "ID": "testText",
                 "SAuthor": "des. test", 
                 "SAbout": "Kratky dotaznik pro debugging text odpovedi", 
-                "QuestSum": "?", 
                 "STime": "?"
             },
         "questions": [
@@ -67,7 +65,6 @@ const JSONdata = [
                 "ID": "testcheck",
                 "SAuthor": "des. test", 
                 "SAbout": "Kratky dotaznik pro debugging text odpovedi", 
-                "QuestSum": "?", 
                 "STime": "?"
             },
         "questions": [
@@ -86,7 +83,6 @@ const JSONdata = [
                 "ID": "testradio",
                 "SAuthor": "des. test", 
                 "SAbout": "Kratky dotaznik pro debugging text odpovedi", 
-                "QuestSum": "?", 
                 "STime": "?"
             },
         "questions": [

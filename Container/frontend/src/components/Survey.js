@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBa from './NavBar';
+import NavBar from './NavBar';
 import Question from './Question';
 import { Container, Jumbotron} from 'react-bootstrap';
 import { useState } from "react";
@@ -34,15 +34,17 @@ const Otazky = (props) => {
         return (odpovedi[ID])
     }
 
-    for(const item of props.JSONdata) {
-        const index=props.JSONdata.indexOf(item);
+    // Cyklus pro vložení jednotlivých otázek do dynamického pole Result
+    for(const item of props.JSONdata) { // JSONdata obsahuje otázky kontrétní ankety, item obsahuje data konkrétní otázky
+        const index=props.JSONdata.indexOf(item); 
 
+        // Do pole vkládáme jednotlivé karty s otázkou
         Result.push(<Question data={item} index={index} onChange={onChange} ID={item.ID} value={ValueByID(item.ID)} key={index}/>);
         Result.push(<br key={'b'+index} />);
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}> {/*Zobrazení všech otázek v jednom form*/}
                 {Result}
                 <a href="/iu/"><input 
                   type="submit"
@@ -53,14 +55,15 @@ const Otazky = (props) => {
     )
 }
 
+// Komponenta pro zobrazení webové stránky s vyplněním odpovědí pro konkrétní dotazník
 const Survey = (props) => { 
     return (
         <Container className="p-1">
-            <NavBa />
+            <NavBar />
             <Jumbotron>
                 <h1>Vítejte u dotazníku "{props.JSONdata[props.ID].info.SName}"</h1>
             </Jumbotron>
-            <Otazky JSONdata={props.JSONdata[props.ID].questions} nameID={props.nameID} />
+            <Otazky JSONdata={props.JSONdata[props.ID].questions} nameID={props.nameID} /> {/*Dynamicky tvořené otázky*/}
 
         </Container>
     )
