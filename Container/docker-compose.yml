@@ -1,0 +1,42 @@
+version: '3.4'
+
+services:
+  python_fastapi:
+    image: python_fastapi
+    build:
+      context: ./fastapi
+    ports:
+      - 50001:8000
+
+  frontend:
+     image: js
+     build: 
+       context: ./frontend
+     environment:
+       NODE_ENV: development
+     ports:
+       - 50003:3000
+       - 9229:9229
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=example
+    
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=anoyne@anywhere.com
+      - PGADMIN_DEFAULT_PASSWORD=example
+    ports:
+      - 50011:80
+
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - 50000:80
+    depends_on:
+      - postgres
+      - frontend
+      - python_fastapi
