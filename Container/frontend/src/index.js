@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 // Import komponenty App
 import App from './App';
 
-const root = "/ui"
+const root = "/ui" // prozatimni reseni
 
 // Renderování komponenty App (obsahuje router přesměrování)
 ReactDOM.render( 
