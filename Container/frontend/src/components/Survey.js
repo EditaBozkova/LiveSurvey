@@ -1,13 +1,16 @@
 import React from 'react';
+
 import NavBar from './NavBar';
 import Question from './Question';
 import { Container, Jumbotron} from 'react-bootstrap';
 import { useState } from "react";
 
 const Otazky = (props) => {
+    // promenne pro odeslani na server
     const [odpovedi, setOdpovedi] = useState({});
     const Result=[]
 
+    // funkce pro spracovani dat pri zmacknuti "submit"
     const handleSubmit = (prop) => {
         prop.preventDefault();
 
@@ -23,6 +26,7 @@ const Otazky = (props) => {
           });
     };
 
+    // funkce pro pridani nove odpovedi do predchozich odpovedi
     const onChange = (ID, data) => {
         setOdpovedi(odpovedi => ({
             ...odpovedi,

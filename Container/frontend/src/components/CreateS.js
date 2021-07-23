@@ -3,29 +3,28 @@ import React from 'react';
 
 // Import používaných komponent/funkcí
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { Container, Jumbotron } from 'react-bootstrap';
 import NavBar from './NavBar';
 
 // Spuštění komponenty pro zobrazení podmenu
 const Podmenu = () => {
+    // promenne pro odeslani na server
     const [nazev, setNazev] = useState("Dotazník pro studenty KB");
     const [autor, setAutor] = useState("Jan Schwarz");
-    const history = useHistory();
 
+    // funkce pro spracovani dat pri zmacknuti "submit"
     const handleSubmit = (props) => {
         props.preventDefault();
-        const dotaznik = {nazev, autor};
+        const dotaznik = {nazev, autor};    // ulozeni promenych do jedne
 
-        fetch("/api/createH/", {
+        fetch("/api/createH/", {    // odeslani dat (kam)
             method: "POST",
             headers: {
-              "Content-type": "application/json; charset=UTF-8", // indikace obsahu
+              "Content-type": "application/json; charset=UTF-8",    // indikace obsahu
             },
             body: JSON.stringify(dotaznik),
           }).then(() => {
             console.log("Zaklad dotazniku pridan");
-            history.push("/");
           });
     };
 
@@ -40,14 +39,14 @@ const Podmenu = () => {
                  type="text"
                  required
                  placeholder={nazev}
-                 onChange={(props) => setNazev(props.target.value)}
+                 onChange={(props) => setNazev(props.target.value)} // pri zmene obsahu -> poslat data do setNazev
                 /><br /><br />
                 <label>Autor: </label><br />
                 <input
                  type="text"
                  required
                  placeholder={autor}
-                 onChange={(props) => setAutor(props.target.value)}
+                 onChange={(props) => setAutor(props.target.value)} // pri zmene obsahu -> poslat data do setAutor
                 /><br /><br />
                 <input // Tlačítko pro odeslání dat
                  type="submit"

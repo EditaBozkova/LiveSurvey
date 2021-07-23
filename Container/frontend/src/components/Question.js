@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card} from 'react-bootstrap';
 
+// switch pro zobrazeni komponenty podle typu otazky
 const Type = (props) => {
     if(props.Type === 'radio') {
         return (
@@ -17,13 +18,14 @@ const Type = (props) => {
             <CheckOdpoved {...props} />
         )
     }
-    else {
+    else { // v pripade, ze se neco pokazi
         return (
             <div>NULL</div>
         )
     }
 }
 
+// otazka s textovou odpovedi
 const TextOdpoved = (props) => {
     const onChange = (event) => {
         props.onChange(props.ID, event.target.value)
@@ -40,9 +42,12 @@ const TextOdpoved = (props) => {
     )
 }
 
+// otazka s vyberem jedne odpovedi
 const RadioOdpoved = (props) => {
+    // pole pro jednotlive inputy
     const Result=[]
 
+    // v pripade zakliknuti volby
     const onChange = (event) => {
         props.onChange(props.ID, event.target.value)
     }
@@ -68,9 +73,12 @@ const RadioOdpoved = (props) => {
     )
 }
 
+// otazka s vyberem vice odpovedi (vytvoreno po 2. z duvodu odlisnosti od radio - checkbox neni ani jeden required, jinak stejne)
 const CheckOdpoved = (props) => {
+    // pole pro jednotlive inputy
     const Result=[]
 
+    // v pripade zakliknuti volby
     const onChange = (event) => {
         props.onChange(props.ID, event.target.value)
     }
